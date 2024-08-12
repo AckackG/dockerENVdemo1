@@ -1,0 +1,7 @@
+name: dockerENVdemo
+
+services:
+  dockerENVdemo:
+    build: .
+    env_file: WHATEVER_THENAME
+
