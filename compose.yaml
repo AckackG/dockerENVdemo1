@@ -4,4 +4,8 @@ services:
   docker_envdemo:
     build: .
     env_file: WHATEVER_THENAME
+    environment:
+      # dockercompose 会自动读取 .env 的值，可用于且仅用于compose的流程，比如根据.env的值指定mount路径。
+      # 但不会把.env注入到 container里，所以，需要environment 手动指定需要注入的变量
+      DOT_ENV_VARIABLE: ${MY_SECRET_KEY}
 

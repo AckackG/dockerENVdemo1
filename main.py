@@ -1,26 +1,17 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
 from os import environ
-from time import sleep
 
 
 def main():
-    while True:
-        # show all env k,v
+    # show all env k,v
+    print('-'*20)
+    for k, v in environ.items():
+        print(f'{k} = {v}\n')
 
-        for k, v in environ.items():
-            print(f'{k} = {v}\n')
-
-        print('FOO: ', environ.get('FOO'))
-        print('BAR: ', environ.get('BAR'))
-        sleep(10)
+    print('ENV_FILE_FOO: ', environ.get('ENV_FILE_FOO'))
+    print('ENV_FILE_BAR: ', environ.get('ENV_FILE_BAR'))
+    print('DOT_ENV_VARIABLE: ', environ.get('DOT_ENV_VARIABLE'))
+    print('ENV_FROM_DOCKERFILE: ', environ.get('ENV_FROM_DOCKERFILE'))
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
